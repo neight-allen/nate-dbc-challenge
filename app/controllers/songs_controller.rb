@@ -27,7 +27,6 @@ class SongsController < ApplicationController
   def create
     @song = Song.new(song_params)
     @song.album = @album
-    @song.user ||= current_user
 
     respond_to do |format|
       if @song.save

@@ -7,8 +7,8 @@
 
 <p>
   <strong>Album:</strong>
-  <%= @song.album %>
+  <%= @song.album.name %>
 </p>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
+<%= link_to 'Edit', edit_album_song_path(@album,@song) %> |
+<%= link_to 'Back', album_songs_path(@album) %>
