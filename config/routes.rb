@@ -3,8 +3,10 @@ Rails.application.routes.draw do
     root to: "artists#index"
   # end 
 
-  resources :albums
-  resources :artists
+  
+  resources :artists do
+    resources :albums
+  end
   
   devise_for :users
 
