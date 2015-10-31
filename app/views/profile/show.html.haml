@@ -1,1 +1,17 @@
 %h1 Favorites for #{@user.email}
+.row
+  .col-md-4
+    %h2 Artists
+    %ul
+    - @user.artists.each do |artist|
+      %li #{link_to artist.name, artist}
+  .col-md-4
+    %h2 Albums
+    %ul
+    - @user.albums.each do |album|
+      %li #{link_to album.name, album}
+  .col-md-4
+    %h2 Songs
+    %ul
+    - @user.songs.each do |song|
+      %li #{link_to song.name, song}
