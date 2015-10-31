@@ -61,6 +61,8 @@
 
 Rails.application.routes.draw do
   
+  get 'user/:id', to: 'profile#show', as: 'user_profile'
+
   # authenticated :user do
     root to: "artists#index"
   # end 
