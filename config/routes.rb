@@ -76,9 +76,9 @@ Rails.application.routes.draw do
     resources :album_favorites
   end
 
-  # resources :songs do
-  #   resources :song_favorites
-  # end
+  resources :songs do
+    resources :song_favorites
+  end
   
   devise_for :users
 
