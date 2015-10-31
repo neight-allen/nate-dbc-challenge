@@ -44,6 +44,10 @@ Rails.application.routes.draw do
   resources :artists do
     resources :albums
   end
+
+  resources :albums do
+    resources :songs
+  end
   
   devise_for :users
 
