@@ -1,0 +1,1 @@
+$('a.album-unfavorite[data-album-id=<%= @album.id %>]').html('<%= j album_favorite_unfavorite_link(@album) %>')

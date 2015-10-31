@@ -73,6 +73,7 @@ Rails.application.routes.draw do
 
   resources :albums do
     resources :songs
+    resources :album_favorites
   end
 
   # resources :songs do
