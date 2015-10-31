@@ -25,6 +25,7 @@ class ArtistsController < ApplicationController
   # POST /artists.json
   def create
     @artist = Artist.new(artist_params)
+    @artist.user = current_user if @artist.user.nil?
 
     respond_to do |format|
       if @artist.save
@@ -69,6 +70,6 @@ class ArtistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def artist_params
-      params.require(:artist).permit(:name, :user_id)
+      params.require(:artist).permit(:name)
     end
 end
