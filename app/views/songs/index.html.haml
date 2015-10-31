@@ -1,0 +1,20 @@
+%p#notice= notice
+%h1
+  Track list for #{@album.name}
+%table
+  %thead
+    %tr
+      %th Name
+      %th Album
+      %th{:colspan => "3"}
+  %tbody
+    - @songs.each do |song|
+      %tr
+        %td= song.name
+        %td= link_to 'Show', [@album,@song]
+        %td= link_to 'Edit', edit_album_song_path(@album,song)
+        %td= link_to 'Destroy', [@album,@song], method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          = song_favorite_unfavorite_link song
+%br/
+= link_to 'Add Song', new_album_song_path

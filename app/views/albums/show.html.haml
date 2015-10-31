@@ -1,0 +1,31 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @album.name
+%p
+  %strong Artist:
+  = @album.artist.name
+%p
+  %strong User:
+  = @album.user.email
+= link_to 'Edit', edit_artist_album_path(@artist,@album)
+|
+= link_to 'Back', artist_albums_path(@artist)
+%p#notice= notice
+%h1 Track list
+%table
+  %thead
+    %tr
+      %th Name
+      %th{:colspan => "3"}
+  %tbody
+    - @album.songs.each do |song|
+      %tr
+        %td= song.name
+        %td= link_to 'Show', [@album,@song]
+        %td= link_to 'Edit', edit_album_song_path(@album,song)
+        %td= link_to 'Destroy', [@album,@song], method: :delete, data: { confirm: 'Are you sure?' }
+        %td
+          = song_favorite_unfavorite_link song
+%br/
+= link_to 'Add Song', new_album_song_path(@album)

@@ -1,0 +1,10 @@
+%p#notice= notice
+%p
+  %strong Name:
+  = @song.name
+%p
+  %strong Album:
+  = @song.album.name
+= link_to 'Edit', edit_album_song_path(@album,@song)
+|
+= link_to 'Back', album_songs_path(@album)
