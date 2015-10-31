@@ -65,7 +65,9 @@ class AlbumsController < ApplicationController
 
   private
     def set_artist
+      return redirect_to [@album.artist, @album] if params[:artist_id].nil?
       @artist = Artist.find(params[:artist_id])
+
     end
 
     # Use callbacks to share common setup or constraints between actions.
