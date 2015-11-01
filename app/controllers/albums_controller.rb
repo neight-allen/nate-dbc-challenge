@@ -5,7 +5,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = @artist.albums
+    @albums = @artist.present? ? @artist.albums : Album.all
   end
 
   # GET /albums/1
@@ -65,9 +65,7 @@ class AlbumsController < ApplicationController
 
   private
     def set_artist
-      return redirect_to [@album.artist, @album] if params[:artist_id].nil?
-      @artist = Artist.find(params[:artist_id])
-
+      @artist = Artist.find(params[:artist_id]) if params[:artist_id].present?
     end
 
     # Use callbacks to share common setup or constraints between actions.
