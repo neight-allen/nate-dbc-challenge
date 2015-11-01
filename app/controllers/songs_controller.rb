@@ -5,7 +5,7 @@ class SongsController < ApplicationController
   # GET /songs
   # GET /songs.json
   def index
-    @songs = @album.songs
+    @songs = @album.present? ? @album.songs : Song.all
   end
 
   # GET /songs/1
@@ -65,7 +65,7 @@ class SongsController < ApplicationController
 
   private
     def set_album
-      @album = Album.find(params[:album_id])
+      @album = Album.find(params[:album_id]) if params[:album_id]
     end
 
     # Use callbacks to share common setup or constraints between actions.

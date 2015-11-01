@@ -1,6 +1,6 @@
 %p#notice= notice
 %h1
-  Track list for #{@album.name}
+  All Songs
 %table
   %thead
     %tr
@@ -11,10 +11,9 @@
     - @songs.each do |song|
       %tr
         %td= song.name
-        %td= link_to 'Show', [@album,@song]
-        %td= link_to 'Edit', edit_album_song_path(@album,song)
-        %td= link_to 'Destroy', [@album,@song], method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', [song.album,song]
+        %td= link_to 'Edit', edit_album_song_path(song.album,song)
+        %td= link_to 'Destroy', [song.album,@song], method: :delete, data: { confirm: 'Are you sure?' }
         %td
           = song_favorite_unfavorite_link song
-%br/
-= link_to 'Add Song', new_album_song_path
+
