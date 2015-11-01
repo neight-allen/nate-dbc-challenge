@@ -16,5 +16,5 @@
         %td= link_to 'Show', [album.artist,album]
         %td= link_to 'Edit', edit_artist_album_path(album.artist,album)
         %td= link_to 'Destroy', [album.artist,album], method: :delete, data: { confirm: 'Are you sure?' }
-        %td
-          = album_favorite_unfavorite_link album
+        %td= album_favorite_unfavorite_link album
+        %td= album_own_unown_link album
