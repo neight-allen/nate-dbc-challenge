@@ -1,0 +1,1 @@
+$('a.album-ownership[data-album-id=<%= @album.id %>]').html('<%= j album_own_unown_link(@album) %>')
