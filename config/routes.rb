@@ -65,7 +65,7 @@ Rails.application.routes.draw do
 
   get 'search_controller/results'
 
-  get 'user/:id', to: 'profile#show', as: 'user_profile'
+  get 'user/:id', to: 'profile#show', as: 'user'
   get 'search/results'
 
   # authenticated :user do
