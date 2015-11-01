@@ -8,10 +8,16 @@
   .col-md-4
     %h2 Albums
     %ul
-    - @user.albums.each do |album|
+    - @user.favorite_albums.each do |album|
       %li #{link_to album.name, album}
   .col-md-4
     %h2 Songs
     %ul
     - @user.songs.each do |song|
       %li #{link_to song.name, song}
+.row  
+  .col-md-4
+    %h2 My Albums
+    %ul
+    - @user.owned_albums.each do |album|
+      %li #{link_to album.name, album}

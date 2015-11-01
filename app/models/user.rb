@@ -26,7 +26,9 @@ class User < ActiveRecord::Base
   has_many :artist_favorites
   has_many :artists, through: :artist_favorites
   has_many :album_favorites
-  has_many :albums, through: :album_favorites
+  has_many :favorite_albums, through: :album_favorites, source: :album
+  has_many :album_ownerships
+  has_many :owned_albums, through: :album_ownerships, source: :album
   has_many :song_favorites
   has_many :songs, through: :song_favorites
 
