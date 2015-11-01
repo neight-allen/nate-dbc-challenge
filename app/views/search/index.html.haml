@@ -1,0 +1,19 @@
+%h1 Search results
+.row
+  .col-md-4
+    %h2 Artists
+    %ul
+    - @artists.each do |artist|
+      %li #{link_to artist.name, artist}
+  .col-md-4
+    %h2 Albums
+    %ul
+    - @albums.each do |album|
+      %li #{link_to album.name, album}
+  .col-md-4
+    %h2 Songs
+    %ul
+    - @songs.each do |song|
+      %li #{link_to song.name, song}
+
+/ = @q.to_hash

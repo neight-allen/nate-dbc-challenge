@@ -61,7 +61,12 @@
 
 Rails.application.routes.draw do
   
+  get 'search/index', as: :searches
+
+  get 'search_controller/results'
+
   get 'user/:id', to: 'profile#show', as: 'user_profile'
+  get 'search/results'
 
   # authenticated :user do
     root to: "artists#index"
