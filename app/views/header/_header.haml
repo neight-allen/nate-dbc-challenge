@@ -1,4 +1,8 @@
 #nav.navbar.navbar-default
   .container
+    %ul.nav.navbar-nav
+      %li= link_to 'Artists', artists_path
+      %li= link_to 'Albums', albums_path
+      %li= link_to 'Songs', songs_path
     %ul.nav.navbar-nav.navbar-right
       = render 'header/search'
