@@ -2,10 +2,10 @@
 
 one:
   name: An Album
-  artist: one_artist
+  artist: one
   user: one
 
 two:
   name: Another Album
-  artist: one_artist
+  artist: one
   user: one
