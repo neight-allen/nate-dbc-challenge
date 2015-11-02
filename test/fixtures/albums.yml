@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  artist_id: 
-  user_id: 
+  name: An Album
+  artist: one_artist
+  user: one
 
 two:
-  name: MyString
-  artist_id: 
-  user_id: 
+  name: Another Album
+  artist: one_artist
+  user: one

@@ -1,8 +1,15 @@
 require 'test_helper'
+# require 'devise'
 
 class AlbumsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   setup do
-    @albums = albums(:one)
+    # @albums = albums(:one)
+    sign_in User.first
+  end
+
+  test "Are albums loading?" do
+    assert_not_nil Album.first.artist
   end
 
   test "should get index" do

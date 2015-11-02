@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+one_artist:
   name: An Artist
-  user_id: 1
+  user_id: one
 
-two:
+two_artist:
   name: Another Artist
-  user_id: 1
+  user_id: one
