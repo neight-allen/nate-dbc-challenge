@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  album_id: 
+  name: First Song
+  album: one
 
 two:
-  name: MyString
-  album_id: 
+  name: Second Song
+  album: one
+
+three:
+  name: Another Song
+  album: one
+
+four:
+  name: Best Song
+  album: one
